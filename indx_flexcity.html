@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INDx | Flex City RP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: black;
+      color: #f1f1f1;
+      overflow-x: hidden;
+    }
+    .overlay-home {
+      height: 100vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    .overlay-home h1 {
+      font-size: 3em;
+      color: #ffae00;
+    }
+    .overlay-home p {
+      font-size: 1.5em;
+      margin-top: 15px;
+      color: #fff;
+    }
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+      z-index: 3000;
+    }
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 250px;
+      height: 100%;
+      background: #111;
+      box-shadow: 2px 0 10px #ffae00;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 2500;
+    }
+    .side-menu.active { left: 0; }
+    .side-menu button {
+      display: block;
+      width: 100%;
+      margin: 15px 0;
+      padding: 12px;
+      font-size: 1em;
+      color: white;
+      background: #222;
+      border: 1px solid #ffae00;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .side-menu button:hover {
+      background: #ffae00;
+      color: black;
+    }
+    .collab-section, .reward-section {
+      display: none;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #000;
+      color: white;
+      padding: 80px 20px 80px 20px;
+      overflow-y: auto;
+      z-index: 2000;
+    }
+    .collab-section h2, .reward-section h2 {
+      font-size: 2.5em;
+      color: #ffae00;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .gang-box {
+      background: #1c1c1c;
+      border: 2px solid #ffae00;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 15px #ffae00;
+      text-align: center;
+    }
+    .gang-box h3 {
+      font-size: 1.8em;
+      color: orange;
+    }
+    .gang-box p {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: orange;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px orange;
+    }
+    .hind-btn { background: #00bfff; box-shadow: 0 0 10px #00bfff; }
+    .zx-btn { background: red; box-shadow: 0 0 10px red; }
+    .yt-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .yt-btn {
+      display: inline-flex;
+      align-items: center;
+      margin: 10px;
+      padding: 10px 20px;
+      font-weight: bold;
+      color: white;
+      background-color: red;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 10px red;
+    }
+    .yt-btn i {
+      margin-right: 8px;
+    }
+    .reward-overlay {
+      font-size: 2em;
+      color: #ffae00;
+      text-align: center;
+      margin-top: 150px;
+    }
+    .footer {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="side-menu" id="sideMenu">
+    <button onclick="showCollab(); toggleMenu()">Collaboration</button>
+    <button onclick="showReward(); toggleMenu()">Gang Extra Reward</button>
+  </div>
+  <div class="overlay-home">
+    <h1>INDx Official Website</h1>
+    <p>This site represents the Indian community - INDx, HIND, ZX & other collab gangs in Flex City RP.</p>
+  </div>
+  <div class="collab-section" id="collabSection">
+    <h2>Collaboration</h2>
+    <div class="gang-box">
+      <h3>[INDx] INDIAN</h3>
+      <p>Leaders: MAFIAxVICE, KINGxYT</p>
+      <a href="https://flexcity.app/gang/INDx?lang=en" target="_blank" class="btn">Join INDIAN</a>
+    </div>
+    <div class="gang-box">
+      <h3 style="color:#00bfff">[HIND] BHARAT</h3>
+      <p>Leader: PLAYER (PLR)</p>
+      <a href="https://link.flexcity.app/gang/HIND" target="_blank" class="btn hind-btn">Join BHARAT</a>
+    </div>
+    <div class="gang-box">
+      <h3 style="color:red">[ZX1]</h3>
+      <p>Leader: KINGxZED</p>
+      <a href="https://link.flexcity.app/gang/ZX1" target="_blank" class="btn zx-btn">Join ZX1</a>
+    </div>
+    <div class="gang-box">
+      <h3 style="color:red">[ZX2]</h3>
+      <p>Leader: BLACKMAFIA</p>
+      <a href="https://link.flexcity.app/gang/ZX2" target="_blank" class="btn zx-btn">Join ZX2</a>
+    </div>
+    <div class="yt-section">
+      <a href="https://youtube.com/@viceonline_king" target="_blank" class="yt-btn"><i class="fab fa-youtube"></i> KINGxYT</a>
+      <a href="https://youtube.com/@mafiavice" target="_blank" class="yt-btn"><i class="fab fa-youtube"></i> MAFIAxVICE</a>
+      <a href="https://youtube.com/@player_viceonline" target="_blank" class="yt-btn"><i class="fab fa-youtube"></i> PLAYER</a>
+    </div>
+  </div>
+  <div class="reward-section" id="rewardSection">
+    <h2>Gang Extra Reward</h2>
+    <div class="reward-overlay">COMING SOON</div>
+  </div>
+  <div class="footer">
+    &copy; 2025 INDx Community | All rights reserved. <br>
+    This website is under development.
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('active');
+    }
+    function showCollab() {
+      hideAll();
+      document.getElementById('collabSection').style.display = 'block';
+    }
+    function showReward() {
+      hideAll();
+      document.getElementById('rewardSection').style.display = 'block';
+    }
+    function hideAll() {
+      document.getElementById('collabSection').style.display = 'none';
+      document.getElementById('rewardSection').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
